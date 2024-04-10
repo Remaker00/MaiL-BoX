@@ -19,7 +19,7 @@ const EmailEditor = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/mail/sent-mail', dataToSend, {
+            const response = await axios.post('https://my-mail-six.vercel.app/mail/sent-mail', dataToSend, {
                 headers: {
                     Authorization: token,
                 },

@@ -14,7 +14,7 @@ const LoginForm = () => {
             password: formData.password,
         };
 
-        axios.post('http://localhost:4000/user/checkUser',{dataToSend})
+        axios.post('https://my-mail-six.vercel.app/user/checkUser',{dataToSend})
             .then((response) => {
                 localStorage.setItem('token', response.data.token);
                 

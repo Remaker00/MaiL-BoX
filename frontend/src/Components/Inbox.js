@@ -11,7 +11,7 @@ const Inbox = () => {
     const fetchEmails = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:4000/mail/get-mail', {
+            const response = await axios.get('https://my-mail-six.vercel.app/mail/get-mail', {
                 headers: {
                     Authorization: token,
                 },
@@ -27,7 +27,7 @@ const Inbox = () => {
     const handleEmailClick = async (email) => {
         if (!email.read) {
             try {
-                await axios.put(`http://localhost:4000/mail/mark-read/${email._id}`);
+                await axios.put(`https://my-mail-six.vercel.app/mail/mark-read/${email._id}`);
                 const updatedEmail = { ...email, read: true };
                 setSelectedEmail(updatedEmail);
             } catch (error) {
@@ -41,7 +41,7 @@ const Inbox = () => {
     const handleDelete = async (e, email) => {
         e.stopPropagation();
 
-        axios.delete(`http://localhost:4000/mail/deletemail/${email._id}`)
+        axios.delete(`https://my-mail-six.vercel.app/mail/deletemail/${email._id}`)
             .then((response) => {
                 if (response.status === 200) {
                     alert('Email deleted successfully');

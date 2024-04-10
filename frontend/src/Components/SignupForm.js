@@ -24,7 +24,7 @@ const SignupForm = () => {
                 password: formData.password,
             };
 
-            axios.post('http://localhost:4000/user/addUser', { dataToSend })
+            axios.post('https://my-mail-six.vercel.app/user/addUser', { dataToSend })
                 .then(() => {
                     alert('Account Successfully Created: ');
                     setFormData({
